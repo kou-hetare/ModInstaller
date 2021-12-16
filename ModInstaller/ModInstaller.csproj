@@ -4,7 +4,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>Resource\favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
