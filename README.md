@@ -22,4 +22,4 @@ Mod名の右クリックで保存場所をエクスプローラで開く、MOD�
 AmongUsCapture,Better-CrewLinkもドロップして登録可<br>
 チェックを付けると自動的に起動します。
 
-##Copyright (c) 2021, kou-hetare
+## Copyright (c) 2021, kou-hetare
