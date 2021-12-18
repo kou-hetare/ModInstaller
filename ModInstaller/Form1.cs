@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Compression;
+using System.Reflection;
 
 namespace ModInstaller
 {
@@ -97,6 +98,8 @@ namespace ModInstaller
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Version ver = Assembly.GetExecutingAssembly().GetName().Version;
+            VersionLabel.Text = "Ver."+ver.ToString();
             exePath = Path.GetDirectoryName(Application.ExecutablePath);
             dllStorePath = Path.Combine(exePath , "MODs");
             Directory.CreateDirectory(dllStorePath);
@@ -197,7 +200,7 @@ namespace ModInstaller
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BetterCrewLink_Click(object sender, EventArgs e)
         {
             var dlg = new OpenFileDialog();
             dlg.Filter = "Better-CrewLink|Better-CrewLink.exe;Better-CrewLink.lnk";
@@ -532,6 +535,34 @@ namespace ModInstaller
 
         }
 
+        private void OpenExplorer_Click(object sender, EventArgs e)
+        {
+            var items = ModList.SelectedItems;
+            if (items.Count != 1 || items[0].Text== "Vanilla")
+            {
+                MessageBox.Show("Modを選択してください");
+                return;
+            }
+            execCommand(items[0].SubItems[1].Text);
+        }
+
+        private void DeleteMod_Click(object sender, EventArgs e)
+        {
+            var items = ModList.SelectedItems;
+            while(items.Count!=0)
+            {
+                var dllpath = items[0].SubItems[1].Text;
+                if (dllpath != "")
+                {
+                    if (MessageBox.Show(items[0].Text + "を削除します","削除確認",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Directory.Delete(dllpath, true);
+                    }
+                }
+                items[0].Remove();
+            }
+            listupDLL();
+        }
     }
 
 }

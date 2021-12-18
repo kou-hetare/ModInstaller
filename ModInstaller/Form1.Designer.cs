@@ -29,12 +29,16 @@ namespace ModInstaller
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.StartSetting = new System.Windows.Forms.Button();
             this.FolderSetting = new System.Windows.Forms.Button();
             this.ModList = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.ListViewcontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.OpenExplorer = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteMod = new System.Windows.Forms.ToolStripMenuItem();
             this.Start = new System.Windows.Forms.Button();
             this.UpdateList = new System.Windows.Forms.Button();
             this.ShortcutType = new System.Windows.Forms.TextBox();
@@ -46,6 +50,9 @@ namespace ModInstaller
             this.BetterCrewLinkStatus = new System.Windows.Forms.TextBox();
             this.BootAmongUsMuteCapture = new System.Windows.Forms.CheckBox();
             this.BootBetterCrewLink = new System.Windows.Forms.CheckBox();
+            this.VersionLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ListViewcontextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // StartSetting
@@ -75,6 +82,7 @@ namespace ModInstaller
             this.ModList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader3});
+            this.ModList.ContextMenuStrip = this.ListViewcontextMenuStrip;
             this.ModList.GridLines = true;
             this.ModList.HideSelection = false;
             this.ModList.Location = new System.Drawing.Point(14, 193);
@@ -94,6 +102,28 @@ namespace ModInstaller
             // 
             this.columnHeader3.Text = "Path";
             this.columnHeader3.Width = 600;
+            // 
+            // ListViewcontextMenuStrip
+            // 
+            this.ListViewcontextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenExplorer,
+            this.DeleteMod});
+            this.ListViewcontextMenuStrip.Name = "ListViewcontextMenuStrip";
+            this.ListViewcontextMenuStrip.Size = new System.Drawing.Size(165, 48);
+            // 
+            // OpenExplorer
+            // 
+            this.OpenExplorer.Name = "OpenExplorer";
+            this.OpenExplorer.Size = new System.Drawing.Size(164, 22);
+            this.OpenExplorer.Text = "エクスプローラで開く";
+            this.OpenExplorer.Click += new System.EventHandler(this.OpenExplorer_Click);
+            // 
+            // DeleteMod
+            // 
+            this.DeleteMod.Name = "DeleteMod";
+            this.DeleteMod.Size = new System.Drawing.Size(164, 22);
+            this.DeleteMod.Text = "MODの削除";
+            this.DeleteMod.Click += new System.EventHandler(this.DeleteMod_Click);
             // 
             // Start
             // 
@@ -170,7 +200,7 @@ namespace ModInstaller
             this.button1.TabIndex = 11;
             this.button1.Text = "BetterCrewLinkの指定";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.BetterCrewLink_Click);
             // 
             // BetterCrewLinkStatus
             // 
@@ -203,12 +233,32 @@ namespace ModInstaller
             this.BootBetterCrewLink.UseVisualStyleBackColor = true;
             this.BootBetterCrewLink.CheckedChanged += new System.EventHandler(this.BootBetterCrewLink_CheckedChanged);
             // 
+            // VersionLabel
+            // 
+            this.VersionLabel.AutoSize = true;
+            this.VersionLabel.Location = new System.Drawing.Point(542, 404);
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.Size = new System.Drawing.Size(38, 15);
+            this.VersionLabel.TabIndex = 15;
+            this.VersionLabel.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(542, 423);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 15);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Copyright (C) 2021 こう。";
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 444);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.BootBetterCrewLink);
             this.Controls.Add(this.BootAmongUsMuteCapture);
             this.Controls.Add(this.BetterCrewLinkStatus);
@@ -231,6 +281,7 @@ namespace ModInstaller
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
+            this.ListViewcontextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +305,11 @@ namespace ModInstaller
         private System.Windows.Forms.TextBox BetterCrewLinkStatus;
         private System.Windows.Forms.CheckBox BootAmongUsMuteCapture;
         private System.Windows.Forms.CheckBox BootBetterCrewLink;
+        private System.Windows.Forms.ContextMenuStrip ListViewcontextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem OpenExplorer;
+        private System.Windows.Forms.ToolStripMenuItem DeleteMod;
+        private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 
