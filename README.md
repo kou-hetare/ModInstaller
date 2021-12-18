@@ -17,5 +17,9 @@ Windows11で確認
 　※2回目以降はdllだけでも可。複数dllのものはZip推奨<br>
 4.Modを選択してゲーム開始<br>
 
+Mod名の右クリックで保存場所をエクスプローラで開く、MODの削除が可能
+
 AmongUsCapture,Better-CrewLinkもドロップして登録可<br>
 チェックを付けると自動的に起動します。
+
+##Copyright (c) 2021, kou-hetare
