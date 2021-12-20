@@ -11,7 +11,9 @@ Windows11で確認<BR>
 .NET5が必要かも
 
 ## インストール
-適当なフォルダを作成して配置するだけでOKなはず。
+ [V1.0.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V1.0.0.0/ModInstaller.exe)  
+ こちらをダウンロード  
+ 適当なフォルダを作成して配置するだけでOKなはず。
 
 ## 使い方
 1. AmongUs起動用ショートカットをドロップ
