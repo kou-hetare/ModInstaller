@@ -27,19 +27,18 @@ Windows11で確認
 
 ・ その他ツールは何でも登録できます。  
 追加ボタンからダイアログ上で登録します  
-![image](https://user-images.githubusercontent.com/96226646/147822761-77fc0d07-7118-45b7-98a9-41290563f746.png)  
+    <img src="https://user-images.githubusercontent.com/96226646/147822761-77fc0d07-7118-45b7-98a9-41290563f746.png" width="380" height="80">  
 AmongUsMute、Better-CrewLinkと他のツールを併用する場合はこちらに入れても構いません  
 URLを登録して、ブラウザを開くことも可能です。
 
 ## MODの登録/ゲームの開始
 1. ModのZipをドロップ  
-![image](https://user-images.githubusercontent.com/96226646/147822825-1505e0f6-c02e-4027-b186-151fde5a8043.png)
-<=![image](https://user-images.githubusercontent.com/96226646/147822851-78e6225b-d436-4410-8263-3b592708c410.png)  
+<img src="https://user-images.githubusercontent.com/96226646/147822825-1505e0f6-c02e-4027-b186-151fde5a8043.png" width="400" height="240"><=<img src="https://user-images.githubusercontent.com/96226646/147822851-78e6225b-d436-4410-8263-3b592708c410.png">  
 
 1. Vanilla/Modを選択してゲーム開始ボタンを押すと設定をしたのち起動します。  
-<img src="https://user-images.githubusercontent.com/96226646/147822966-f0cf6cc7-5e8f-4c91-b3aa-2439e5e8cebf.png" width="400" height="240">
+    <img src="https://user-images.githubusercontent.com/96226646/147822966-f0cf6cc7-5e8f-4c91-b3aa-2439e5e8cebf.png" width="400" height="240"> 
 
-AmongUsCapture,Better-CrewLinkはチェックを入れると自動的に起動します。  
+・ AmongUsCapture,Better-CrewLinkはチェックを入れると自動的に起動します。  
 その他を選択してリストでチェックを入れると入れたものすべて起動します。
 
 ## 
