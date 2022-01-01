@@ -449,11 +449,11 @@ namespace AmongUsModInstaller
                     }
                     else if (Path.GetFileName(fileName) == "AmongUsCapture.exe")
                     {
-                        appsetting.AmongUsCaptureExe = fileName;
+                        appsetting.AmongUsCaptureExe = file;
                     }
                     else if (Path.GetFileName(fileName) == "Better-CrewLink.exe")
                     {
-                        appsetting.BetterCrewLinkExe = fileName;
+                        appsetting.BetterCrewLinkExe = file;
                     }
 
                 }
