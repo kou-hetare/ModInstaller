@@ -569,7 +569,7 @@ namespace AmongUsModInstaller
             }
         }
 
-        private void tabControlSetting_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabControlSetting_SelectedIndexChanged(object sender, EventArgs e)
         {
             TextUpdate();
         }

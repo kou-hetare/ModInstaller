@@ -106,7 +106,7 @@ namespace AmongUsModInstaller
             this.tabControlSetting.SelectedIndex = 0;
             this.tabControlSetting.Size = new System.Drawing.Size(776, 426);
             this.tabControlSetting.TabIndex = 0;
-            this.tabControlSetting.SelectedIndexChanged += new System.EventHandler(this.tabControlSetting_SelectedIndexChanged);
+            this.tabControlSetting.SelectedIndexChanged += new System.EventHandler(this.TabControlSetting_SelectedIndexChanged);
             // 
             // tabPageGame
             // 
