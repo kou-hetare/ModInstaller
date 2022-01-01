@@ -83,7 +83,7 @@ namespace AmongUsModInstaller
             // buttonRegist
             // 
             this.buttonRegist.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonRegist.Location = new System.Drawing.Point(670, 82);
+            this.buttonRegist.Location = new System.Drawing.Point(670, 71);
             this.buttonRegist.Name = "buttonRegist";
             this.buttonRegist.Size = new System.Drawing.Size(75, 23);
             this.buttonRegist.TabIndex = 5;
@@ -97,7 +97,7 @@ namespace AmongUsModInstaller
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 129);
+            this.ClientSize = new System.Drawing.Size(758, 98);
             this.Controls.Add(this.buttonRegist);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxPath);
@@ -107,6 +107,8 @@ namespace AmongUsModInstaller
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddToolForm";
             this.Text = "外部ツールの登録";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.AddToolForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.AddToolForm_DragEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 
