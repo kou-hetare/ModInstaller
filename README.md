@@ -10,10 +10,15 @@ Windows11で確認
 .NET 5 Desktop Runtimeが必要です
 
 ## インストール
- [v2.0.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.0.0.0/ModInstaller.exe)
+ [v2.1.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2%2C1%2C0%2C0/ModInstaller.exe)
  こちらをダウンロード  
  適当なフォルダを作成して配置してください。  
  ランタイムが無い場合は誘導されるので.NET 5 Desktop Runtimeをインストールしてください。
+
+## 使い方概要動画  
+
+https://user-images.githubusercontent.com/96226646/147852024-3b6b40a1-7b36-4679-a87f-30123d60b859.mp4
+
 
 ## 初期設定
 1. 設定タブを開きAmongUs起動用ショートカットをドロップ  
