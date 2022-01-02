@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Reflection;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AmongUsModInstaller
@@ -535,7 +538,11 @@ namespace AmongUsModInstaller
                 }
             }
             ExecCommand(appsetting.AmongUsURL);
-
+            buttonGameStart.Enabled = false;
+            buttonGameStart.Text = "起動中";
+            var task=Task.Run(()=>TimerStart());
+            task.Wait();
+            timer1.Enabled = true;
         }
 
         private void ButtonAddTool_Click(object sender, EventArgs e)
@@ -572,6 +579,24 @@ namespace AmongUsModInstaller
         private void TabControlSetting_SelectedIndexChanged(object sender, EventArgs e)
         {
             TextUpdate();
+        }
+
+        private void TimerStart()
+        {
+            while(Process.GetProcessesByName("Among Us").Length == 0)
+            {
+                Thread.Sleep(100);
+            }
+
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(Process.GetProcessesByName("Among Us").Length == 0)
+            {
+                timer1.Enabled = false;
+                buttonGameStart.Enabled = true;
+                buttonGameStart.Text = "Among Us起動";
+            }
         }
     }
 

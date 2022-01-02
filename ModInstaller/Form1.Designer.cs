@@ -82,6 +82,7 @@ namespace AmongUsModInstaller
             this.textBoxShortcutPlatform = new System.Windows.Forms.TextBox();
             this.buttonAmongUsShortcut = new System.Windows.Forms.Button();
             this.OtherToolsSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControlSetting.SuspendLayout();
             this.tabPageGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -317,7 +318,7 @@ namespace AmongUsModInstaller
             // ModName
             // 
             this.ModName.Text = "Mod名";
-            this.ModName.Width = 120;
+            this.ModName.Width = 250;
             // 
             // ModPath
             // 
@@ -394,6 +395,7 @@ namespace AmongUsModInstaller
             // 
             // dataGridViewToolSetting
             // 
+            this.dataGridViewToolSetting.AllowDrop = true;
             this.dataGridViewToolSetting.AllowUserToAddRows = false;
             this.dataGridViewToolSetting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewToolSetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -405,6 +407,8 @@ namespace AmongUsModInstaller
             this.dataGridViewToolSetting.RowTemplate.Height = 25;
             this.dataGridViewToolSetting.Size = new System.Drawing.Size(663, 144);
             this.dataGridViewToolSetting.TabIndex = 14;
+            this.dataGridViewToolSetting.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridViewToolSetting_DragDrop);
+            this.dataGridViewToolSetting.DragEnter += new System.Windows.Forms.DragEventHandler(this.dataGridViewToolSetting_DragEnter);
             // 
             // Column1
             // 
@@ -604,6 +608,10 @@ namespace AmongUsModInstaller
             this.buttonAmongUsShortcut.UseVisualStyleBackColor = true;
             this.buttonAmongUsShortcut.Click += new System.EventHandler(this.ButtonAmongUsShortcut_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormMain
             // 
             this.AllowDrop = true;
@@ -691,6 +699,7 @@ namespace AmongUsModInstaller
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button buttonDeleteTool;
         private System.Windows.Forms.Button buttonAddTool;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
