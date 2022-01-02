@@ -107,6 +107,7 @@ namespace AmongUsModInstaller
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddToolForm";
             this.Text = "外部ツールの登録";
+            this.Load += new System.EventHandler(this.AddToolForm_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.AddToolForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.AddToolForm_DragEnter);
             this.ResumeLayout(false);

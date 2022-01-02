@@ -13,12 +13,18 @@ namespace AmongUsModInstaller
 {
     public partial class AddToolForm : Form
     {
-        public string toolName;
-        public string toolPath;
+        public string toolName="";
+        public string toolPath = "";
 
         public AddToolForm()
         {
             InitializeComponent();
+        }
+
+        private void AddToolForm_Load(object sender, EventArgs e)
+        {
+            textBoxName.Text = toolName;
+            textBoxPath.Text = toolPath;
         }
 
         private void ButtonSelectExe_Click(object sender, EventArgs e)
@@ -84,5 +90,6 @@ namespace AmongUsModInstaller
             }
 
         }
+
     }
 }

@@ -598,6 +598,66 @@ namespace AmongUsModInstaller
                 buttonGameStart.Text = "Among Us起動";
             }
         }
+
+        private void dataGridViewToolSetting_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Link;
+        }
+
+        private void dataGridViewToolSetting_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                foreach (string file
+                in (string[])e.Data.GetData(DataFormats.FileDrop))
+                {
+                    var ext = Path.GetExtension(file).ToLower();
+                    String fileName = file;
+                    String fileExt = ext;
+
+                    if (ext == ".lnk")
+                    {
+                        var shellAppType = Type.GetTypeFromProgID("WScript.Shell");
+                        dynamic shell = Activator.CreateInstance(shellAppType);
+                        var link = shell.CreateShortcut(file);
+                        fileName = link.TargetPath;
+                        fileExt = Path.GetExtension(fileName).ToLower();
+                    }
+                    String toolPath;
+                    if (fileExt == ".url")
+                    {
+                        toolPath = fileName;
+                    }
+                    else
+                    {
+                        toolPath = file;
+
+                    }
+                    var dlg = new AddToolForm();
+                    dlg.toolPath = toolPath;
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        AppSetting.OtherTool item = new() { ToolName = dlg.toolName, ToolPath = dlg.toolPath };
+                        appsetting.OtherTools.Add(item);
+                        OtherToolsSource.ResetBindings(true);
+                        SaveSetting();
+                    }
+                }
+            }
+            else if (e.Data.GetDataPresent("UniformResourceLocator"))
+            {
+                String url=e.Data.GetData(DataFormats.Text).ToString();
+                var dlg = new AddToolForm();
+                dlg.toolPath = url;
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    AppSetting.OtherTool item = new() { ToolName = dlg.toolName, ToolPath = dlg.toolPath };
+                    appsetting.OtherTools.Add(item);
+                    OtherToolsSource.ResetBindings(true);
+                    SaveSetting();
+                }
+            }
+        }
     }
 
 }
