@@ -223,11 +223,11 @@ namespace AmongUsModInstaller
         void TextUpdate()
         {
             SaveSetting();
-            if (appsetting.AmongUsURL.Contains("steam"))
+            if (appsetting.AmongUsURL.ToLower().Contains("steam"))
             {
                 textBoxShortcutPlatform.Text = "Steam";
             }
-            else if (appsetting.AmongUsURL.Contains("epicgames"))
+            else if (appsetting.AmongUsURL.ToLower().Contains("epicgames"))
             {
                 textBoxShortcutPlatform.Text = "Epic";
             }
@@ -238,11 +238,11 @@ namespace AmongUsModInstaller
 
             textBoxExePath.Text = appsetting.AmongUsFolder;
 
-            if (appsetting.AmongUsFolder.Contains("Steam"))
+            if (appsetting.AmongUsFolder.ToLower().Contains("steam"))
             {
                 textBoxExePlatform.Text = "Steam";
             }
-            else if (appsetting.AmongUsFolder.Contains("Epic"))
+            else if (appsetting.AmongUsFolder.ToLower().Contains("epic"))
             {
                 textBoxExePlatform.Text = "Epic";
             }
