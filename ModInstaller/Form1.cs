@@ -498,6 +498,19 @@ namespace AmongUsModInstaller
             if (listViewMod.SelectedItems.Count == 1)
             {
                 radioMod.Checked = true;
+                buttonGameStart.Enabled = true;
+            }
+            else
+            {
+                buttonGameStart.Enabled = false;
+            }
+            if (listViewMod.SelectedItems.Count > 0)
+            {
+                contextMenuStrip1.Enabled=true;
+            }
+            else
+            {
+                contextMenuStrip1.Enabled = false;
             }
         }
 
