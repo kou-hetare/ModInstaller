@@ -671,6 +671,42 @@ namespace AmongUsModInstaller
                 }
             }
         }
+
+        private void toolStripOpen_Click(object sender, EventArgs e)
+        {
+            if (listViewMod.SelectedItems.Count > 0)
+            {
+                var dll_store_path = GetDllStorePath();
+                foreach (ListViewItem item in listViewMod.SelectedItems)
+                {
+                    ExecCommand(Path.Combine(dll_store_path, item.Text));            
+                }
+            }
+
+        }
+
+        private void toolStripDelete_Click(object sender, EventArgs e)
+        {
+            if (listViewMod.SelectedItems.Count == 0) return;
+
+            var dll_store_path = GetDllStorePath();
+            var str = "下記Modを削除します。";
+            foreach (ListViewItem item in listViewMod.SelectedItems)
+            {
+                str += "\r\n  " + item.Text;
+            }
+            if (MessageBox.Show(str, "Modの削除", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+            while (listViewMod.SelectedItems.Count > 0)
+            {
+                var modname = listViewMod.SelectedItems[0].Text;
+                Directory.Delete(Path.Combine(dll_store_path, modname), true);
+                listViewMod.SelectedItems[0].Remove();
+            }
+
+        }
     }
 
 }

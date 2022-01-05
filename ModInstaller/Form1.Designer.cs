@@ -53,6 +53,9 @@ namespace AmongUsModInstaller
             this.listViewMod = new System.Windows.Forms.ListView();
             this.ModName = new System.Windows.Forms.ColumnHeader();
             this.ModPath = new System.Windows.Forms.ColumnHeader();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.radioMod = new System.Windows.Forms.RadioButton();
             this.radioVanila = new System.Windows.Forms.RadioButton();
             this.buttonGameStart = new System.Windows.Forms.Button();
@@ -89,6 +92,7 @@ namespace AmongUsModInstaller
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToolsGame)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabPageSetting.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToolSetting)).BeginInit();
@@ -306,6 +310,7 @@ namespace AmongUsModInstaller
             this.listViewMod.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ModName,
             this.ModPath});
+            this.listViewMod.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewMod.HideSelection = false;
             this.listViewMod.Location = new System.Drawing.Point(7, 74);
             this.listViewMod.Name = "listViewMod";
@@ -324,6 +329,28 @@ namespace AmongUsModInstaller
             // 
             this.ModPath.Text = "Path";
             this.ModPath.Width = 300;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripOpen,
+            this.toolStripDelete});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // toolStripOpen
+            // 
+            this.toolStripOpen.Name = "toolStripOpen";
+            this.toolStripOpen.Size = new System.Drawing.Size(180, 22);
+            this.toolStripOpen.Text = "エクスプローラで開く";
+            this.toolStripOpen.Click += new System.EventHandler(this.toolStripOpen_Click);
+            // 
+            // toolStripDelete
+            // 
+            this.toolStripDelete.Name = "toolStripDelete";
+            this.toolStripDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripDelete.Text = "削除する";
+            this.toolStripDelete.Click += new System.EventHandler(this.toolStripDelete_Click);
             // 
             // radioMod
             // 
@@ -633,6 +660,7 @@ namespace AmongUsModInstaller
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewToolsGame)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabPageSetting.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -700,6 +728,9 @@ namespace AmongUsModInstaller
         private System.Windows.Forms.Button buttonDeleteTool;
         private System.Windows.Forms.Button buttonAddTool;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripOpen;
+        private System.Windows.Forms.ToolStripMenuItem toolStripDelete;
     }
 }
 
