@@ -7,13 +7,13 @@ Among UsのMod管理ツールです。
 
 ## 動作環境
 Windows11で確認  
-.NET 5 Desktop Runtimeが必要です
+.NET 5 Desktop Runtime(x86)が必要です
 
 ## インストール
  [v2.2.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.2.0.0/ModInstaller.exe)
  こちらをダウンロード  
  適当なフォルダを作成して配置してください。  
- ランタイムが無い場合は誘導されるので.NET 5 Desktop Runtimeをインストールしてください。
+ ランタイムが無い場合は誘導されるので.NET 5 Desktop Runtime(x86)をインストールしてください。
 
 ## 使い方概要動画  
 
