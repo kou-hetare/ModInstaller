@@ -555,6 +555,7 @@ namespace AmongUsModInstaller
             buttonGameStart.Text = "起動中";
             var task=Task.Run(()=>TimerStart());
             task.Wait();
+            buttonGameStart.Text = "実行中";
             timer1.Enabled = true;
         }
 
