@@ -706,7 +706,36 @@ namespace AmongUsModInstaller
                 Directory.Delete(Path.Combine(dll_store_path, modname), true);
                 listViewMod.SelectedItems[0].Remove();
             }
+        }
 
+        private void ToolStripMerge_Click(object sender, EventArgs e)
+        {
+            if (listViewMod.SelectedItems.Count < 2) return;
+
+            var dll_store_path = GetDllStorePath();
+            var str = "下記Modを合成します。";
+            string mergename="";
+            foreach (ListViewItem item in listViewMod.SelectedItems)
+            {
+                str += "\r\n  " + item.Text;
+                if (mergename != "") mergename += "+";
+                mergename+= item.Text;
+            }
+            if (MessageBox.Show(str, "Modの合成", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+            var mergeDir = Path.Combine(dll_store_path, mergename);
+            Directory.CreateDirectory(mergeDir);
+            foreach (ListViewItem item in listViewMod.SelectedItems)
+            {
+                var dllpath = item.SubItems[1].Text;
+                foreach(var file in Directory.GetFiles(dllpath))
+                {
+                    File.Copy(file, Path.Combine(mergeDir,Path.GetFileName(file)),true);
+                }
+            }
+            AddModDLL(mergename);
         }
     }
 

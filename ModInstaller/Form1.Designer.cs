@@ -86,6 +86,7 @@ namespace AmongUsModInstaller
             this.buttonAmongUsShortcut = new System.Windows.Forms.Button();
             this.OtherToolsSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ToolStripMerge = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlSetting.SuspendLayout();
             this.tabPageGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -323,7 +324,7 @@ namespace AmongUsModInstaller
             // ModName
             // 
             this.ModName.Text = "Mod名";
-            this.ModName.Width = 250;
+            this.ModName.Width = 420;
             // 
             // ModPath
             // 
@@ -334,9 +335,10 @@ namespace AmongUsModInstaller
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripOpen,
+            this.ToolStripMerge,
             this.toolStripDelete});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 70);
             // 
             // toolStripOpen
             // 
@@ -639,6 +641,13 @@ namespace AmongUsModInstaller
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // ToolStripMerge
+            // 
+            this.ToolStripMerge.Name = "ToolStripMerge";
+            this.ToolStripMerge.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMerge.Text = "Modを合成する";
+            this.ToolStripMerge.Click += new System.EventHandler(this.ToolStripMerge_Click);
+            // 
             // FormMain
             // 
             this.AllowDrop = true;
@@ -731,6 +740,7 @@ namespace AmongUsModInstaller
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripOpen;
         private System.Windows.Forms.ToolStripMenuItem toolStripDelete;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMerge;
     }
 }
 
