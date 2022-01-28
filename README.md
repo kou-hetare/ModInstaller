@@ -10,7 +10,7 @@ Windows11で確認
 .NET 5 Desktop Runtime(x86)が必要です
 
 ## インストール
- [v2.4.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.4.0.0/ModInstaller.exe)
+ [v2.5.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.5.0.0/ModInstaller.exe)
  こちらをダウンロード  
  適当なフォルダを作成して配置してください。  
  ランタイムが無い場合は誘導されるので.NET 5 Desktop Runtime(x86)をインストールしてください。
@@ -18,6 +18,11 @@ Windows11で確認
 ## 使い方概要動画  
 
 https://user-images.githubusercontent.com/96226646/147852024-3b6b40a1-7b36-4679-a87f-30123d60b859.mp4
+  
+MOD合成例  
+
+https://user-images.githubusercontent.com/96226646/151551683-9d4864d5-8d7a-40f2-b435-aabc22f64170.mp4
+
 
 
 ## 初期設定
@@ -46,5 +51,13 @@ URLを登録して、ブラウザを開くことも可能です。
 ・ AmongUsCapture,Better-CrewLinkはチェックを入れると自動的に起動します。  
 その他を選択してリストでチェックを入れると入れたものすべて起動します。
 
+## MODの合成/削除
+MOD右クリックでメニューが表示されます  
+<img src="https://user-images.githubusercontent.com/96226646/151550325-f73cc67e-a786-4c0c-a6d5-7b362af7b5bf.png" width="400" height="240">  
+複数選択時、MODの合成が出来ます。   
+<img src="https://user-images.githubusercontent.com/96226646/151550777-0f1ba569-6d9e-42d8-a517-d4cff38736ef.png" width="400" height="240">  
+ただし、起動できるかどうかはMODによりますので、検証が必要です。  
+不要なMODは同様に削メニューから削除が可能です  
+  
 ## 
 Copyright (c) 2021, kou-hetare
