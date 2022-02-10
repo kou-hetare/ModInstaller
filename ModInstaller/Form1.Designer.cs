@@ -55,6 +55,8 @@ namespace AmongUsModInstaller
             this.ModPath = new System.Windows.Forms.ColumnHeader();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMerge = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripRename = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.radioMod = new System.Windows.Forms.RadioButton();
             this.radioVanila = new System.Windows.Forms.RadioButton();
@@ -86,7 +88,6 @@ namespace AmongUsModInstaller
             this.buttonAmongUsShortcut = new System.Windows.Forms.Button();
             this.OtherToolsSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.ToolStripMerge = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlSetting.SuspendLayout();
             this.tabPageGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -313,12 +314,14 @@ namespace AmongUsModInstaller
             this.ModPath});
             this.listViewMod.ContextMenuStrip = this.contextMenuStrip1;
             this.listViewMod.HideSelection = false;
+            this.listViewMod.LabelEdit = true;
             this.listViewMod.Location = new System.Drawing.Point(7, 74);
             this.listViewMod.Name = "listViewMod";
             this.listViewMod.Size = new System.Drawing.Size(423, 223);
             this.listViewMod.TabIndex = 2;
             this.listViewMod.UseCompatibleStateImageBehavior = false;
             this.listViewMod.View = System.Windows.Forms.View.Details;
+            this.listViewMod.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listViewMod_AfterLabelEdit);
             this.listViewMod.SelectedIndexChanged += new System.EventHandler(this.ListViewMod_SelectedIndexChanged);
             // 
             // ModName
@@ -336,21 +339,36 @@ namespace AmongUsModInstaller
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripOpen,
             this.ToolStripMerge,
+            this.ToolStripRename,
             this.toolStripDelete});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 92);
             // 
             // toolStripOpen
             // 
             this.toolStripOpen.Name = "toolStripOpen";
-            this.toolStripOpen.Size = new System.Drawing.Size(180, 22);
+            this.toolStripOpen.Size = new System.Drawing.Size(164, 22);
             this.toolStripOpen.Text = "エクスプローラで開く";
             this.toolStripOpen.Click += new System.EventHandler(this.toolStripOpen_Click);
+            // 
+            // ToolStripMerge
+            // 
+            this.ToolStripMerge.Name = "ToolStripMerge";
+            this.ToolStripMerge.Size = new System.Drawing.Size(164, 22);
+            this.ToolStripMerge.Text = "Modを合成する";
+            this.ToolStripMerge.Click += new System.EventHandler(this.ToolStripMerge_Click);
+            // 
+            // ToolStripRename
+            // 
+            this.ToolStripRename.Name = "ToolStripRename";
+            this.ToolStripRename.Size = new System.Drawing.Size(164, 22);
+            this.ToolStripRename.Text = "名前の変更";
+            this.ToolStripRename.Click += new System.EventHandler(this.ToolStripRename_Click);
             // 
             // toolStripDelete
             // 
             this.toolStripDelete.Name = "toolStripDelete";
-            this.toolStripDelete.Size = new System.Drawing.Size(180, 22);
+            this.toolStripDelete.Size = new System.Drawing.Size(164, 22);
             this.toolStripDelete.Text = "削除する";
             this.toolStripDelete.Click += new System.EventHandler(this.toolStripDelete_Click);
             // 
@@ -641,13 +659,6 @@ namespace AmongUsModInstaller
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // ToolStripMerge
-            // 
-            this.ToolStripMerge.Name = "ToolStripMerge";
-            this.ToolStripMerge.Size = new System.Drawing.Size(180, 22);
-            this.ToolStripMerge.Text = "Modを合成する";
-            this.ToolStripMerge.Click += new System.EventHandler(this.ToolStripMerge_Click);
-            // 
             // FormMain
             // 
             this.AllowDrop = true;
@@ -741,6 +752,7 @@ namespace AmongUsModInstaller
         private System.Windows.Forms.ToolStripMenuItem toolStripOpen;
         private System.Windows.Forms.ToolStripMenuItem toolStripDelete;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMerge;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripRename;
     }
 }
 

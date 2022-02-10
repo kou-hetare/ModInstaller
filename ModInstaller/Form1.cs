@@ -707,6 +707,12 @@ namespace AmongUsModInstaller
                 listViewMod.SelectedItems[0].Remove();
             }
         }
+        private void ToolStripRename_Click(object sender, EventArgs e)
+        {
+            if (listViewMod.SelectedItems.Count != 1) return;
+            listViewMod.SelectedItems[0].BeginEdit();
+
+        }
 
         private void ToolStripMerge_Click(object sender, EventArgs e)
         {
@@ -737,6 +743,17 @@ namespace AmongUsModInstaller
             }
             AddModDLL(mergename);
         }
-    }
 
+        private void listViewMod_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            if (e.Label == null) return;
+            var item = listViewMod.Items[e.Item];
+            var src = Path.Combine(GetDllStorePath(), item.Text);
+            var distName = e.Label;
+            var dist= Path.Combine(GetDllStorePath(), distName);
+            item.Remove();
+            Directory.Move(src, dist);
+            AddModDLL(distName);
+        }
+    }
 }
