@@ -10,7 +10,7 @@ Windows11で確認
 .NET 5 Desktop Runtime(x86)が必要です
 
 ## インストール
- [v2.6.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.6.0.0/ModInstaller.exe)
+ [v2.6.1.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.6.1.0/ModInstaller.exe)
  こちらをダウンロード  
  適当なフォルダを作成して配置してください。  
  ランタイムが無い場合は誘導されるので.NET 5 Desktop Runtime(x86)をインストールしてください。
