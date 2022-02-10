@@ -104,9 +104,13 @@ namespace AmongUsModInstaller
 
         void CopyModDll(String[] files)
         {
+            var modName = GetModName(files);
+            var dlg = new ModNameCheck();
+            dlg.SetModFileInfo(modName);
+            if (dlg.ShowDialog() != DialogResult.OK) return;
+            modName = dlg.GetModName();
 
-            var ModName = GetModName(files);
-            var dllpath = Path.Combine(GetDllStorePath(), ModName);
+            var dllpath = Path.Combine(GetDllStorePath(), modName);
             Directory.CreateDirectory(dllpath);
             foreach (var fileName in files)
             {
@@ -120,7 +124,7 @@ namespace AmongUsModInstaller
                     return;
                 }
             }
-            AddModDLL(ModName);
+            AddModDLL(modName);
 
         }
 
