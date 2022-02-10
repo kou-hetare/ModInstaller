@@ -10,7 +10,7 @@ Windows11で確認
 .NET 5 Desktop Runtime(x86)が必要です
 
 ## インストール
- [v2.5.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.5.0.0/ModInstaller.exe)
+ [v2.6.0.0](https://github.com/kou-hetare/ModInstaller/releases/download/V2.6.0.0/ModInstaller.exe)
  こちらをダウンロード  
  適当なフォルダを作成して配置してください。  
  ランタイムが無い場合は誘導されるので.NET 5 Desktop Runtime(x86)をインストールしてください。
@@ -44,6 +44,9 @@ URLを登録して、ブラウザを開くことも可能です。
 ## MODの登録/ゲームの開始
 1. ModのZipをドロップ  
 <img src="https://user-images.githubusercontent.com/96226646/147822825-1505e0f6-c02e-4027-b186-151fde5a8043.png" width="400" height="240"><=<img src="https://user-images.githubusercontent.com/96226646/147822851-78e6225b-d436-4410-8263-3b592708c410.png">  
+
+1. Mod名の確認 ※たまにバージョン情報が無いものがあるので管理用に編集すると便利です。  
+![image](https://user-images.githubusercontent.com/96226646/153402922-45c84ed8-6616-4d63-810e-f61cfb3c57aa.png)
 
 1. Vanilla/Modを選択してゲーム開始ボタンを押すと設定をしたのち起動します。  
     <img src="https://user-images.githubusercontent.com/96226646/147822966-f0cf6cc7-5e8f-4c91-b3aa-2439e5e8cebf.png" width="400" height="240"> 
